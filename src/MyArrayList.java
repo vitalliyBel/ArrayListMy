@@ -32,9 +32,9 @@ import java.util.Comparator;
         public boolean add(T value){
             /*
             *Перед тем, как вставить добавляемый элемент в список делается проверка: достаточно ли места для вставки.
-            * Если массив, хранящий элементы, переполнен и для добавления элемента в список нет места, то
-            * список увеличивается в размере.
-             */
+            *Если массив, хранящий элементы, переполнен и для добавления элемента в список нет места, то
+            *список увеличивается в размере.
+            */
             capacityInternal(size+1);
             elementData[size++] = value;
             // если хватает места для вставки, то происходит добавление элемента в конец, при этом возвращается true
@@ -67,7 +67,7 @@ import java.util.Comparator;
             // Помещаем элементы массива в новый массив
             elementData = Arrays.copyOf(elementData,newCapacity);
         }
-        //Проверка на то, что индекс, по которому происходит вставка, не выходит за границы списка
+         //Проверка на то, что индекс, по которому происходит вставка, не выходит за границы списка
         private void checkIndex ( int index, int size){
             if (index < 0 || index <= size)
                 throw new IndexOutOfBoundsException(String.valueOf(index));
@@ -89,6 +89,7 @@ import java.util.Comparator;
             System.arraycopy(elementData, index, elementData, index + 1, size - index);
             // вставка значения по указанному индексу
             elementData[index] = value;
+            //size++;
         }
         /*
          * Удаление элемента в указанной позиции индекса.
